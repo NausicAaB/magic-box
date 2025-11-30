@@ -6,7 +6,7 @@ public class DraggableObject : MonoBehaviour
     private bool isDragging = false;
     private Vector3 originalPosition;
     private float originalZ;
-    private bool isPlaced = false; // Nouveau : savoir si l'objet est bien rangé
+    private bool isPlaced = false; 
 
     void Start()
     {
@@ -16,7 +16,6 @@ public class DraggableObject : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Ne pas pouvoir re-déplacer un objet déjà bien placé
         if (isPlaced) return;
 
         offset = transform.position - GetMouseWorldPosition();
@@ -68,6 +67,7 @@ public class DraggableObject : MonoBehaviour
                     Debug.Log("BON PLACEMENT !");
                     Vector3 slotPosition = zone.GetAvailableSlotPosition();
                     PlaceOnShelf(slotPosition);
+                    GameManager.Instance.ObjectPlaced();
                 }
                 else
                 {
