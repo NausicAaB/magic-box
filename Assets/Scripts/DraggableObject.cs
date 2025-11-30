@@ -74,11 +74,13 @@ public class DraggableObject : MonoBehaviour
                     // ERREUR ! Mauvais placement
                     Debug.Log("MAUVAIS PLACEMENT !");
                     ReturnToStart();
+                    GameManager.Instance.ObjectPlacedWrong();
                 }
             }
             else
             {
                 ReturnToStart();
+                GameManager.Instance.ObjectPlacedWrong();
             }
         }
         else
