@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     void Victory()
     {
-        Debug.Log("VICTOIRE !");
-        // TODO: Charger scène de victoire
+        SceneManager.LoadScene(2);
     }
 }
